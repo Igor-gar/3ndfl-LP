@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
 Disallow: /oplata.html
-
-Sitemap: https://3ndfl-nalog.ru/sitemap.xml
