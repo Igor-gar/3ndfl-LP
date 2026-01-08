@@ -477,20 +477,20 @@ section {
 
 .founder-content {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Изменено с 1fr 2fr на 1fr 1fr для равных колонок */
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: stretch; /* Растягиваем элементы по высоте */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
 }
 
 .founder-image {
-    display: flex;
-    align-items: stretch; /* Растягиваем изображение */
+    position: relative;
+    height: auto;
 }
 
 .founder-image img {
     width: 100%;
-    height: 100%; /* Занимает всю высоту родителя */
-    object-fit: cover; /* Сохраняет пропорции, заполняя весь блок */
+    max-height: 350px; /* Ограничиваем высоту фото */
+    object-fit: cover; /* Сохраняем пропорции, обрезая лишнее */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
@@ -498,7 +498,6 @@ section {
 .founder-info {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Выравниваем текст по центру вертикально */
 }
 
 .founder-info .section-title {
@@ -899,14 +898,9 @@ section {
         gap: 40px;
     }
     
-    .founder-image {
-        max-height: 500px; /* Ограничиваем высоту фото на планшетах */
-    }
-    
     .founder-image img {
-        height: auto;
-        max-height: 500px;
-        object-fit: contain; /* Показываем фото полностью */
+        max-height: 400px; /* Увеличиваем фото на мобильных для лучшего вида */
+        width: 100%;
     }
     
     .form-row {
@@ -1049,12 +1043,8 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .founder-image {
-        max-height: 400px; /* Уменьшаем фото на мобильных */
-    }
-    
     .founder-image img {
-        max-height: 400px;
+        max-height: 350px;
     }
 }
 
@@ -1106,11 +1096,7 @@ section {
         font-size: 0.85rem;
     }
     
-    .founder-image {
-        max-height: 350px; /* Еще уменьшаем фото на маленьких экранах */
-    }
-    
     .founder-image img {
-        max-height: 350px;
+        max-height: 300px;
     }
 }
