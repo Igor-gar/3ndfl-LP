@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (href === '#services') {
                 e.preventDefault();
-                // Прокручиваем к секции услуг с небольшим отступом, чтобы кнопки были внизу экрана
+                // Прокручиваем к секции услуг с отступом, чтобы кнопки были видны
                 const servicesSection = document.getElementById('services');
                 if (servicesSection) {
                     // Вычисляем позицию для скролла так, чтобы кнопки были видны
@@ -189,9 +189,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (firstCard) {
                         // Прокручиваем так, чтобы первая карточка была видна вместе с кнопкой
+                        // Увеличиваем смещение, чтобы кнопка была точно видна
                         const cardHeight = firstCard.offsetHeight;
                         const windowHeight = window.innerHeight;
-                        const scrollPosition = servicesPosition + cardHeight - windowHeight + 100;
+                        
+                        // Увеличиваем отступ с 100 до 150, чтобы кнопка была лучше видна
+                        const scrollPosition = servicesPosition + cardHeight - windowHeight + 150;
                         
                         window.scrollTo({
                             top: scrollPosition,
