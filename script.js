@@ -2,6 +2,21 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ===== ПРОКРУТКА В ВЕРХ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ =====
+    // Принудительно прокручиваем страницу вверх при загрузке
+    window.scrollTo(0, 0);
+    
+    // Также добавляем обработчик на событие load для гарантии
+    window.addEventListener('load', function() {
+        // Небольшая задержка для гарантии, что все элементы загрузились
+        setTimeout(function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'instant' // Мгновенная прокрутка без анимации
+            });
+        }, 100);
+    });
+    
     // ===== НАСТРОЙКА ФОРМ =====
     // Замените эти ID на ваши реальные ID с Formspree
     const FORMSPREE_ORDER_FORM_ID = 'YOUR_FORM_ID_HERE';
@@ -121,6 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Показываем сообщение об успехе
                         this.style.display = 'none';
                         document.getElementById('success-message').style.display = 'block';
+                        
+                        // Прокручиваем к форме, чтобы показать сообщение об успехе
+                        setTimeout(() => {
+                            document.getElementById('order-form').scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }, 300);
                     } else {
                         // Для модального окна
                         alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
@@ -268,3 +290,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Сайт 3НДФЛ успешно загружен!');
 });
+
+// Дополнительная гарантия прокрутки вверх при любых обновлениях страницы
+// Этот код выполнится перед загрузкой страницы
+(function() {
+    // Сохраняем текущую позицию скролла
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+    
+    // Принудительно прокручиваем вверх перед началом загрузки
+    if (currentScroll > 0) {
+        window.scrollTo(0, 0);
+    }
+    
+    // Обработчик перед выгрузкой страницы
+    window.addEventListener('beforeunload', function() {
+        // Прокручиваем вверх перед уходом со страницы
+        window.scrollTo(0, 0);
+    });
+})();
