@@ -603,9 +603,12 @@ section {
     background-color: white;
     padding: 40px;
     border-radius: var(--border-radius);
-    max-width: 500px;
+    max-width: 700px; /* Увеличим ширину для текста */
     width: 90%;
     position: relative;
+    max-height: 90vh; /* Ограничим высоту */
+    display: flex;
+    flex-direction: column;
 }
 
 .close-modal {
@@ -625,15 +628,52 @@ section {
 .modal-content h3 {
     margin-bottom: 25px;
     color: var(--primary-color);
+    padding-right: 30px; /* Чтобы не перекрывалось крестиком */
 }
 
 .modal-text {
     line-height: 1.6;
     margin-top: 20px;
+    overflow-y: auto; /* Добавляем прокрутку для длинного текста */
+    padding-right: 10px; /* Отступ для скроллбара */
 }
 
 .modal-text p {
     margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-text strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.modal-text ul {
+    margin: 10px 0 15px 20px;
+}
+
+.modal-text li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Стили для скроллбара */
+.modal-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-text::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+    border-radius: 3px;
+}
+
+.modal-text::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 /* ===== ОБНОВЛЕННЫЙ ПОДВАЛ НА СВЕТЛОМ ФОНЕ ===== */
@@ -894,6 +934,19 @@ section {
     .footer-contact-line {
         align-items: center;
     }
+    
+    .modal-content {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+    
+    .modal-text {
+        font-size: 0.9rem;
+    }
+    
+    .modal-text ul {
+        margin-left: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -907,7 +960,15 @@ section {
     }
     
     .modal-content {
-        padding: 30px 20px;
+        padding: 25px 15px;
+    }
+    
+    .modal-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-text {
+        font-size: 0.85rem;
     }
     
     .header-promo {
