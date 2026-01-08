@@ -1,210 +1,191 @@
-// Основной скрипт для сайта
-
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== НАСТРОЙКА ФОРМ =====
-    // Замените эти ID на ваши реальные ID с Formspree
-    const FORMSPREE_ORDER_FORM_ID = 'YOUR_FORM_ID_HERE';
-    const FORMSPREE_CONSULT_FORM_ID = 'YOUR_CONSULT_FORM_ID_HERE';
-    
-    // Обновляем action у форм
-    const orderForm = document.getElementById('main-form');
-    const consultForm = document.getElementById('consult-form');
-    
-    if (orderForm) {
-        orderForm.action = `https://formspree.io/f/${FORMSPREE_ORDER_FORM_ID}`;
-    }
-    
-    if (consultForm) {
-        consultForm.action = `https://formspree.io/f/${FORMSPREE_CONSULT_FORM_ID}`;
-    }
-    
-    // ===== МОДАЛЬНОЕ ОКНО КОНСУЛЬТАЦИИ =====
-    const modal = document.getElementById('consult-modal');
-    const openModalBtn = document.getElementById('open-consult');
-    const closeModalBtn = document.querySelector('.close-modal');
-    const consultButtons = document.querySelectorAll('a[href="#consult-form"]');
-    
-    // Открытие модального окна
-    function openModal() {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Блокируем прокрутку
-    }
-    
-    // Закрытие модального окна
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Возвращаем прокрутку
-    }
-    
-    // Обработчики событий
-    if (openModalBtn) {
-        openModalBtn.addEventListener('click', openModal);
-    }
-    
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeModal);
-    }
-    
-    // Все кнопки "Бесплатная консультация"
-    consultButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal();
-        });
-    });
-    
-    // Закрытие по клику вне окна
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // ===== ВЫБОР УСЛУГИ =====
+    // Функция для обработки кликов на кнопки услуг
     const serviceButtons = document.querySelectorAll('.btn-service');
     const serviceTypeSelect = document.getElementById('service-type');
     const selectedServiceInput = document.getElementById('selected-service');
+    const orderForm = document.getElementById('order-form');
     
     serviceButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const serviceName = this.getAttribute('data-service');
+            const service = this.getAttribute('data-service');
             
-            // Прокручиваем к форме
-            document.getElementById('order-form').scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Устанавливаем значение в скрытое поле
+            selectedServiceInput.value = service;
             
-            // Устанавливаем выбранную услугу
-            if (selectedServiceInput) {
-                selectedServiceInput.value = serviceName;
-            }
-            
+            // Устанавливаем значение в выпадающий список
             if (serviceTypeSelect) {
-                serviceTypeSelect.value = serviceName;
+                for (let i = 0; i < serviceTypeSelect.options.length; i++) {
+                    if (serviceTypeSelect.options[i].value === service) {
+                        serviceTypeSelect.selectedIndex = i;
+                        break;
+                    }
+                }
             }
             
-            // Фокус на поле имени
-            setTimeout(() => {
-                document.getElementById('name').focus();
-            }, 500);
+            // Прокручиваем к форме заказа
+            if (orderForm) {
+                orderForm.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
     
-    // ===== ОТПРАВКА ФОРМ =====
-    const forms = document.querySelectorAll('form');
+    // Модальное окно для консультации
+    const consultModal = document.getElementById('consult-modal');
+    const openConsultBtn = document.querySelector('.btn-secondary.btn-large[href="#consult-form"]');
+    const closeModalBtn = document.querySelector('.close-modal');
     
-    forms.forEach(form => {
-        form.addEventListener('submit', async function(e) {
+    // Изменяем ссылку на кнопку открытия модального окна
+    if (openConsultBtn) {
+        openConsultBtn.href = '#';
+        openConsultBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (consultModal) {
+                consultModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Блокируем скролл
+            }
+        });
+    }
+    
+    // Закрытие модального окна по крестику
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            if (consultModal) {
+                consultModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Восстанавливаем скролл
+            }
+        });
+    }
+    
+    // Закрытие модального окна по клику вне его
+    if (consultModal) {
+        consultModal.addEventListener('click', function(e) {
+            if (e.target === consultModal) {
+                consultModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Обработка отправки формы
+    const mainForm = document.getElementById('main-form');
+    const successMessage = document.getElementById('success-message');
+    
+    if (mainForm) {
+        mainForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
+            // В реальном проекте здесь был бы AJAX запрос к Formspree
+            // Для демонстрации просто показываем сообщение об успехе
             
-            // Показываем индикатор загрузки
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-            submitButton.disabled = true;
+            // Скрываем форму
+            mainForm.style.display = 'none';
             
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
+            // Показываем сообщение об успехе
+            if (successMessage) {
+                successMessage.style.display = 'block';
+            }
+            
+            // Прокручиваем к сообщению об успехе
+            if (successMessage) {
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // В реальном проекте здесь был бы код отправки формы:
+            /*
+            const formData = new FormData(mainForm);
+            fetch(mainForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
                 if (response.ok) {
-                    // Успешная отправка
-                    if (this.id === 'main-form') {
-                        // Показываем сообщение об успехе
-                        this.style.display = 'none';
-                        document.getElementById('success-message').style.display = 'block';
-                    } else {
-                        // Для модального окна
-                        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-                        closeModal();
-                        this.reset();
-                    }
+                    mainForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    throw new Error('Ошибка отправки формы');
+                    alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
                 }
-            } catch (error) {
-                alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
-                console.error('Form error:', error);
-            } finally {
-                // Восстанавливаем кнопку
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-            }
+            })
+            .catch(error => {
+                alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
+            });
+            */
         });
-    });
+    }
     
-    // ===== АНИМАЦИЯ ПРИ ПРОКРУТКЕ =====
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .advantage-item, .step-item');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
+    // Обработка отправки формы консультации
+    const consultForm = document.getElementById('consult-form');
+    
+    if (consultForm) {
+        consultForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-    
-    // Инициализация анимации
-    const animatedElements = document.querySelectorAll('.service-card, .advantage-item, .step-item');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    window.addEventListener('scroll', animateOnScroll);
-    // Запускаем сразу для видимых элементов
-    animateOnScroll();
-    
-    // ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ ВСЕХ ВНУТРЕННИХ ССЫЛОК =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
+            // В реальном проекте здесь был бы AJAX запрос
+            alert('Спасибо! Мы свяжемся с вами для консультации в ближайшее время.');
             
-            // Пропускаем якоря для форм и модальных окон
-            if (href === '#order-form' || href === '#consult-form') {
-                return;
+            // Закрываем модальное окно
+            if (consultModal) {
+                consultModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
             
-            if (href !== '#') {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }
+            // Очищаем форму
+            consultForm.reset();
         });
-    });
+    }
     
-    // ===== МАСКА ДЛЯ ТЕЛЕФОНА =====
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
+    // Маска для телефона (базовая реализация)
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
             let value = this.value.replace(/\D/g, '');
             
             if (value.length > 0) {
-                value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9) + '-' + value.substring(9, 11);
-                value = value.substring(0, 18);
+                if (value.length <= 1) {
+                    value = '+7 (' + value;
+                } else if (value.length <= 4) {
+                    value = '+7 (' + value.substring(1, 4);
+                } else if (value.length <= 7) {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7);
+                } else if (value.length <= 9) {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9);
+                } else {
+                    value = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9) + '-' + value.substring(9, 11);
+                }
             }
             
             this.value = value;
         });
-    }
+    });
     
-    console.log('Сайт 3НДФЛ успешно загружен!');
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Пропускаем якорь для модального окна
+            if (href === '#consult-form') {
+                return;
+            }
+            
+            // Пропускаем пустые ссылки
+            if (href === '#') {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Учитываем высоту шапки
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
