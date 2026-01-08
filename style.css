@@ -477,27 +477,15 @@ section {
 
 .founder-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 50px;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-}
-
-.founder-image {
-    position: relative;
-    height: auto;
+    align-items: center;
 }
 
 .founder-image img {
     width: 100%;
-    max-height: 350px; /* Ограничиваем высоту фото */
-    object-fit: cover; /* Сохраняем пропорции, обрезая лишнее */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-}
-
-.founder-info {
-    display: flex;
-    flex-direction: column;
 }
 
 .founder-info .section-title {
@@ -895,12 +883,6 @@ section {
     
     .founder-content {
         grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .founder-image img {
-        max-height: 400px; /* Увеличиваем фото на мобильных для лучшего вида */
-        width: 100%;
     }
     
     .form-row {
@@ -1042,10 +1024,6 @@ section {
     .reviews-grid {
         grid-template-columns: 1fr;
     }
-    
-    .founder-image img {
-        max-height: 350px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1094,9 +1072,5 @@ section {
     
     .cta-text-line {
         font-size: 0.85rem;
-    }
-    
-    .founder-image img {
-        max-height: 300px;
     }
 }
