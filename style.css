@@ -4,12 +4,12 @@
     --secondary-color: #3498db; /* Синий цвет для иконок и обводок */
     --accent-color: #e74c3c;
     --success-color: #27ae60;
-    --green-color: #27ae60; /* Зеленый цвет для кнопок */
+    --green-color: #6FBB12; /* Зеленый цвет для кнопок #6FBB12 */
     --red-color: #e74c3c; /* Красный цвет для старых цен */
     --blue-color: #3498db; /* Синий цвет для текста и выделений */
+    --gray-color: #95a5a6; /* Серый цвет для подзаголовков */
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
-    --gray-color: #95a5a6;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 10px;
     --transition: all 0.3s ease;
@@ -66,12 +66,12 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--green-color); /* Зеленый вместо синего */
+    background-color: var(--green-color);
     color: white;
 }
 
 .btn-secondary {
-    background-color: var(--green-color); /* Зеленый вместо красного */
+    background-color: var(--green-color);
     color: white;
 }
 
@@ -94,8 +94,8 @@ section {
     margin-right: 8px;
 }
 
-.blue-text {
-    color: var(--blue-color);
+.gray-text {
+    color: var(--gray-color);
 }
 
 /* ===== ОСНОВНАЯ ШАПКА ===== */
@@ -119,7 +119,7 @@ section {
 }
 
 .logo-image {
-    height: 60px; /* Высота логотипа, можно изменить по вашему усмотрению */
+    height: 60px;
     width: auto;
 }
 
@@ -135,7 +135,7 @@ section {
 }
 
 .promo-link {
-    color: #333; /* Черный цвет текста */
+    color: #333;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -146,7 +146,7 @@ section {
 }
 
 .promo-link:hover {
-    color: var(--blue-color); /* Синий при наведении */
+    color: var(--blue-color);
 }
 
 .promo-link:after {
@@ -156,7 +156,7 @@ section {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--blue-color); /* Синяя линия */
+    background-color: var(--blue-color);
     transition: var(--transition);
 }
 
@@ -178,17 +178,17 @@ section {
 }
 
 .simple-phone-link i {
-    color: #333; /* Черная иконка телефона */
+    color: #333;
     font-size: 1.1rem;
     transition: var(--transition);
 }
 
 .simple-phone-link:hover {
-    color: var(--blue-color); /* Синий при наведении */
+    color: var(--blue-color);
 }
 
 .simple-phone-link:hover i {
-    color: var(--blue-color); /* Синяя иконка при наведении */
+    color: var(--blue-color);
 }
 
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
@@ -237,19 +237,21 @@ section {
 }
 
 .hand-drawn-arrow {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: white;
-    font-weight: 400;
-    transform: rotate(45deg);
-    margin-right: 5px;
-    line-height: 1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hand-drawn-arrow i {
+    font-size: 3.5rem;
 }
 
 .cta-text-line {
-    font-size: 1.1rem; /* Меньше, чем было */
-    font-weight: 600;
-    white-space: nowrap; /* В одну строку */
+    font-size: 1rem; /* Меньше, чем было */
+    font-weight: 400; /* Не жирный */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 600px;
@@ -273,7 +275,7 @@ section {
     padding: 30px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border-top: 5px solid var(--blue-color); /* Синяя рамка сверху */
+    border-top: 5px solid var(--blue-color);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -286,7 +288,7 @@ section {
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--blue-color); /* Синие иконки */
+    color: var(--blue-color);
     margin-bottom: 20px;
 }
 
@@ -312,27 +314,32 @@ section {
 }
 
 .service-price {
-    margin: 20px 0;
-    padding: 15px 0;
+    margin: 10px 0 5px 0;
+    padding: 10px 0 5px 0;
     border-top: 1px dashed #ddd;
-    border-bottom: 1px dashed #ddd;
 }
 
 .old-price {
     text-decoration: line-through;
-    color: var(--red-color); /* Красный цвет для старых цен */
+    color: var(--red-color);
     font-size: 1.1rem;
-    margin-right: 15px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.new-price-line {
+    margin-bottom: 15px;
 }
 
 .new-price {
-    color: var(--green-color); /* Зеленый цвет для новых цен */
+    color: var(--green-color);
     font-size: 1.4rem;
     font-weight: 700;
+    display: block;
 }
 
 .btn-service {
-    background-color: var(--green-color); /* Зеленая кнопка */
+    background-color: var(--green-color);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -345,7 +352,7 @@ section {
 }
 
 .btn-service:hover {
-    background-color: #219653; /* Темнее при наведении */
+    background-color: #5da010; /* Темнее при наведении */
 }
 
 /* ===== ПРЕИМУЩЕСТВА ===== */
@@ -366,7 +373,7 @@ section {
 
 .benefit-icon {
     font-size: 3rem;
-    color: var(--blue-color); /* Синие иконки */
+    color: var(--blue-color);
     margin-bottom: 20px;
 }
 
@@ -401,7 +408,7 @@ section {
 
 .advantage-icon {
     font-size: 2.5rem;
-    color: var(--blue-color); /* Синие иконки */
+    color: var(--blue-color);
     margin-bottom: 20px;
 }
 
@@ -444,7 +451,7 @@ section {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background-color: var(--blue-color); /* Синий номер шага */
+    background-color: var(--blue-color);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -452,7 +459,7 @@ section {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); /* Синяя тень */
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 .step-item h3 {
@@ -471,7 +478,7 @@ section {
     border-radius: 8px;
     font-size: 0.95rem;
     color: #2c3e50;
-    border-left: 4px solid var(--blue-color); /* Синяя полоса */
+    border-left: 4px solid var(--blue-color);
 }
 
 /* ===== ОСНОВАТЕЛЬ ===== */
@@ -499,7 +506,7 @@ section {
 
 .founder-name {
     font-size: 1.3rem;
-    color: var(--blue-color); /* Синий цвет имени */
+    color: var(--gray-color); /* Серый цвет как у подзаголовка формы */
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -555,8 +562,8 @@ section {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--blue-color); /* Синяя рамка при фокусе */
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Синяя тень */
+    border-color: var(--blue-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .form-agreement {
@@ -580,7 +587,7 @@ section {
 
 .form-success i {
     font-size: 4rem;
-    color: var(--blue-color); /* Синяя иконка успеха */
+    color: var(--blue-color);
     margin-bottom: 20px;
 }
 
@@ -642,10 +649,10 @@ section {
 
 /* ===== ОБНОВЛЕННЫЙ ПОДВАЛ НА СВЕТЛОМ ФОНЕ ===== */
 .footer {
-    background-color: white; /* Светлый фон как у шапки */
-    color: #333; /* Темный цвет текста */
+    background-color: white;
+    color: #333;
     padding: 40px 0 20px;
-    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1); /* Тень сверху */
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #eee;
 }
 
@@ -676,7 +683,7 @@ section {
 }
 
 .footer-address {
-    color: #555; /* Темный серый цвет */
+    color: #555;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -688,14 +695,14 @@ section {
 }
 
 .footer-link {
-    color: var(--primary-color); /* Основной цвет */
+    color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition);
     font-size: 0.95rem;
 }
 
 .footer-link:hover {
-    color: var(--blue-color); /* Синий при наведении */
+    color: var(--blue-color);
     text-decoration: underline;
 }
 
@@ -715,7 +722,7 @@ section {
 }
 
 .footer-phone-link {
-    color: var(--primary-color); /* Темный цвет */
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
@@ -727,21 +734,21 @@ section {
 }
 
 .footer-phone-link i {
-    color: #333; /* Черная иконка телефона */
+    color: #333;
     font-size: 1rem;
     transition: var(--transition);
 }
 
 .footer-phone-link:hover {
-    color: var(--blue-color); /* Синий при наведении */
+    color: var(--blue-color);
 }
 
 .footer-phone-link:hover i {
-    color: var(--blue-color); /* Синяя иконка при наведении */
+    color: var(--blue-color);
 }
 
 .footer-time {
-    color: #555; /* Темный серый цвет */
+    color: #555;
     font-size: 0.9rem;
     text-align: right;
     white-space: nowrap;
@@ -793,8 +800,8 @@ section {
     }
     
     .cta-text-line {
-        white-space: normal; /* На мобильных разрешаем перенос */
-        font-size: 1rem;
+        white-space: normal;
+        font-size: 0.95rem;
     }
 }
 
@@ -822,12 +829,15 @@ section {
     }
     
     .hand-drawn-arrow {
-        margin-right: 0;
         margin-bottom: 10px;
     }
     
+    .hand-drawn-arrow i {
+        font-size: 3rem;
+    }
+    
     .cta-text-line {
-        font-size: 1rem;
+        font-size: 0.95rem;
         white-space: normal;
         max-width: 100%;
     }
@@ -925,7 +935,7 @@ section {
         text-align: center;
     }
     
-    .hand-drawn-arrow {
+    .hand-drawn-arrow i {
         font-size: 2.5rem;
     }
 }
