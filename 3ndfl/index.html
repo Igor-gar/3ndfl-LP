@@ -53,34 +53,61 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/28883570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Основная шапка -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Вставьте ваш логотип сюда -->
+                    <!-- Название файла: logo.png -->
+                    <img src="logo.png" alt="3-НДФЛ - декларации по доходам физических лиц" class="logo-image">
+                </div>
+                <div class="header-right">
+                    <div class="header-promo">
+                        <a href="#services" class="promo-link">СКИДКА - 200Р</a>
+                        <a href="#services" class="promo-link">БЕЗ ПРЕДОПЛАТЫ - 1000Р</a>
+                        <a href="#services" class="promo-link">ПОД КЛЮЧ - 5000Р</a>
+                    </div>
+                    <div class="header-contact">
+                        <a href="tel:+74993229237" class="simple-phone-link">
+                            <i class="fas fa-phone"></i>
+                            +7 (499) 322 92 37
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- Главный баннер -->
     <section class="hero">
         <div class="container">
-            <h1>Декларация 3-НДФЛ по доходам: продажа недвижимости, имущества, дополнительные доходы</h1>
-            <p class="hero-subtitle">Профессиональное оформление деклараций по доходам</p>
+            <h1>Оформите декларацию 3-НДФЛ и налоговые вычеты на 40% быстрее</h1>
+            <p class="hero-subtitle">Уже на следующий рабочий день Вы получите полный комплект документов</p>
             <p class="hero-text">Мы работаем по будням, на выходных и в праздники по Москве и МО без визита в офис</p>
-            <div class="hero-buttons">
-                <a href="#order-form" class="btn btn-primary btn-large">
-                    <i class="fas fa-file-contract"></i> Заказать декларацию
-                </a>
-                <a href="#consult-form" class="btn btn-secondary btn-large">
-                    <i class="fas fa-list-alt"></i> Бесплатная консультация
+            
+            <div class="hero-cta">
+                <div class="cta-text">
+                    <span class="cta-text-line">Заказать декларацию или получить бесплатно список документов и консультацию специалиста</span>
+                </div>
+                <a href="#order-form" class="btn btn-green btn-large">
+                    <i class="fas fa-file-alt"></i> ОСТАВИТЬ ЗАЯВКУ
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Услуги по доходам -->
-    <section class="services">
+    <!-- Услуги -->
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Услуги по доходам</h2>
+            <h2 class="section-title">Наши услуги</h2>
             <div class="services-grid">
                 <!-- Услуга 1 -->
                 <div class="service-card">
@@ -92,6 +119,8 @@
                     <p class="service-docs"><strong>Мы заполним:</strong> декларацию, платежку, опись</p>
                     <div class="service-price">
                         <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
                         <span class="new-price">800 руб. со скидкой!</span>
                     </div>
                     <button class="btn-service" data-service="Продажа недвижимости">Заказать услугу</button>
@@ -107,12 +136,65 @@
                     <p class="service-docs"><strong>Мы заполним:</strong> декларацию, платежку, опись</p>
                     <div class="service-price">
                         <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
                         <span class="new-price">800 руб. со скидкой!</span>
                     </div>
                     <button class="btn-service" data-service="Продажа иного имущества">Заказать услугу</button>
                 </div>
 
                 <!-- Услуга 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>КУПИЛИ КВАРТИРУ, ДАЧУ, ЗЕМЕЛЬНЫЙ УЧАСТОК?</h3>
+                    <p>Получите налоговый вычет при покупке квартиры/дома/участка до 5 000 000 руб. (в т.ч. ипотека). Возврат налога до 650 000 руб.</p>
+                    <p class="service-docs"><strong>Мы заполним:</strong> декларацию, заявление, опись. Возможно оформить за пенсионеров, детей</p>
+                    <div class="service-price">
+                        <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
+                        <span class="new-price">800 руб. со скидкой!</span>
+                    </div>
+                    <button class="btn-service" data-service="Покупка недвижимости">Заказать услугу</button>
+                </div>
+
+                <!-- Услуга 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>ОПЛАТИЛИ ОБУЧЕНИЕ?</h3>
+                    <p>Получите налоговый вычет на обучение до 120 000 руб. Возврат налога до 15 600 руб.</p>
+                    <p class="service-docs"><strong>Мы заполним:</strong> декларацию, заявление, опись. Возможно оформить за детей</p>
+                    <div class="service-price">
+                        <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
+                        <span class="new-price">800 руб. со скидкой!</span>
+                    </div>
+                    <button class="btn-service" data-service="Обучение">Заказать услугу</button>
+                </div>
+
+                <!-- Услуга 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>ОПЛАТИЛИ ЛЕЧЕНИЕ?</h3>
+                    <p>Получите налоговый вычет на стоматологию, операцию, консультацию, ДМС, покупку лекарств и т.д. до 120 000 руб. Возврат налога до 15 600 руб.</p>
+                    <p class="service-docs"><strong>Мы заполним:</strong> декларацию, заявление, опись. Возможно оформить за родственников</p>
+                    <div class="service-price">
+                        <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
+                        <span class="new-price">800 руб. со скидкой!</span>
+                    </div>
+                    <button class="btn-service" data-service="Лечение">Заказать услугу</button>
+                </div>
+
+                <!-- Услуга 6 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-money-bill-wave"></i>
@@ -122,6 +204,8 @@
                     <p class="service-docs"><strong>Мы заполним:</strong> декларацию, платежку, опись</p>
                     <div class="service-price">
                         <span class="old-price">1 000 руб.</span>
+                    </div>
+                    <div class="new-price-line">
                         <span class="new-price">800 руб. со скидкой!</span>
                     </div>
                     <button class="btn-service" data-service="Дополнительный доход">Заказать услугу</button>
@@ -130,7 +214,7 @@
         </div>
     </section>
 
-    <!-- Преимущества -->
+    <!-- Преимущества - Избавление от рутины -->
     <section class="benefits">
         <div class="container">
             <h2 class="section-title">Вы избавитесь от рутины</h2>
@@ -152,6 +236,43 @@
                         <i class="fas fa-question-circle"></i>
                     </div>
                     <h3>Поиска ответов на вопросы "когда сдавать", "как сдавать", "куда сдавать"</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Что вы получите -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Вы получите</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Оперативность исполнения</h3>
+                    <p>1 рабочий день</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Обслуживание</h3>
+                    <p>Независимо от региона РФ</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Высокий уровень качества работы</h3>
+                    <p>Контролирующий персонал имеет сертификаты профессиональных бухгалтеров, аттестованных аудиторов, членов СРО</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантию</h3>
+                    <p>Если налоговая откажет Вам по нашей вине, мы либо переделаем декларацию бесплатно, либо вернем Вам деньги</p>
                 </div>
             </div>
         </div>
@@ -186,11 +307,82 @@
         </div>
     </section>
 
+    <!-- О основателе -->
+    <section class="founder">
+        <div class="container">
+            <div class="founder-content">
+                <div class="founder-image">
+                    <!-- Замените на ваше фото -->
+                    <img src="assets/images/founder.jpg" alt="Глебов Игорь - основатель сервиса">
+                </div>
+                <div class="founder-info">
+                    <h2 class="section-title">Друзья, рад приветствовать Вас!</h2>
+                    <p class="founder-name gray-text">Глебов Игорь – основатель данного сервиса</p>
+                    <p>Я имею 15 летний опыт в экономике и финансах, аттестованный аудитор, член СРО «Аудиторская ассоциация содружество», лично гарантирую Вам конфиденциальность и качество наших услуг.</p>
+                    <p>На практике я убедился в том, что когда государство предоставляет возможность воспользоваться возвратом части своих налогов из бюджета, то этим нужно пользоваться не откладывая "на потом".</p>
+                    <p>Наши специалисты предоставят Вам такую возможность – быстро оформят необходимый пакет документов, который будет соответствовать всем требованиям налоговой инспекции и у Вас не возникнет сложностей с проверкой сформированной нами декларации налоговым инспектором.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-card">
+                    <div class="review-photo">
+                        <img src="assets/images/suhareva-maria.jpg" alt="Сухарева Мария">
+                    </div>
+                    <div class="review-text">
+                        <p>Сделали все за один день. Понравилось, что можно отсылать не только сканы, но и просто фотографии, так получается быстрее. Спасибо ребятам!</p>
+                        <p>Буду еще обращаться, когда потребуется возврат уплаченных процентов по ипотеке.</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="review-name">Сухарева Мария</div>
+                        <div class="review-city">Москва</div>
+                    </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="review-card">
+                    <div class="review-photo">
+                        <img src="assets/images/dmitriev-sergey.jpg" alt="Дмитриев Сергей">
+                    </div>
+                    <div class="review-text">
+                        <p>Выше всяких похвал. Сработано четко и оперативно. Уверен, что никаких проблем с налоговой не возникнет. Радует и то, что работа сопровождается необходимыми консультациями. Всем бы так работать!</p>
+                        <p>Удачи вашему коллективу!</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="review-name">Дмитриев Сергей</div>
+                        <div class="review-city">Калининград</div>
+                    </div>
+                </div>
+
+                <!-- Отзыв 3 -->
+                <div class="review-card">
+                    <div class="review-photo">
+                        <img src="assets/images/zaharova-lyubov.jpg" alt="Захарова Любовь">
+                    </div>
+                    <div class="review-text">
+                        <p>Хочу выразить благодарность компании "Точка Отчета". От знакомства с менеджерами сложилось впечатление, что в компании работают компетентные и добросовестные сотрудники, готовые прийти на помощь в любое время дня и ночи. Хорошая и качественная работа. Оперативно, в срок.</p>
+                    </div>
+                    <div class="review-author">
+                        <div class="review-name">Захарова Любовь</div>
+                        <div class="review-city">Свердловская область</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Форма заказа -->
     <section id="order-form" class="contact-form">
         <div class="container">
             <h2 class="section-title">Оформить заказ</h2>
-            <p class="form-subtitle">Заполните форму, и мы свяжемся с вами в течение 30 минут</p>
+            <p class="form-subtitle">Заполните формы, и мы свяжемся с вами в течение 30 минут</p>
             
             <form id="main-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
                 <input type="hidden" name="service" id="selected-service" value="Общая консультация">
@@ -217,6 +409,9 @@
                             <option value="">Выберите услугу</option>
                             <option value="Продажа недвижимости">Продажа недвижимости</option>
                             <option value="Продажа иного имущества">Продажа иного имущества</option>
+                            <option value="Покупка недвижимости">Покупка недвижимости</option>
+                            <option value="Обучение">Вычет на обучение</option>
+                            <option value="Лечение">Вычет на лечение</option>
                             <option value="Дополнительный доход">Дополнительный доход</option>
                         </select>
                     </div>
@@ -232,7 +427,7 @@
                     <label for="agreement">Я согласен на обработку персональных данных</label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary btn-large">
+                <button type="submit" class="btn btn-green btn-large">
                     <i class="fas fa-paper-plane"></i> Отправить заявку
                 </button>
             </form>
@@ -263,7 +458,7 @@
                 <div class="form-group">
                     <textarea name="question" placeholder="Ваш вопрос" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Получить консультацию</button>
+                <button type="submit" class="btn btn-green">Получить консультацию</button>
             </form>
         </div>
     </div>
@@ -272,40 +467,88 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Декларации 3-НДФЛ</h3>
-                    <p>Профессиональное оформление налоговых деклараций по доходам</p>
-                    <p class="footer-contact">
-                        <i class="fas fa-envelope"></i> info@3ndfl-nalog.ru<br>
-                        <i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00
-                    </p>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="3-НДФЛ - декларации по доходам физических лиц" class="footer-logo-image">
                 </div>
-                <div class="footer-links">
-                    <h4>Страницы</h4>
-                    <ul>
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/3ndfl/">Доходы</a></li>
-                        <li><a href="/vichet/">Вычеты</a></li>
-                        <li><a href="/oplata.html">Оплата</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Свяжитесь с нами</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                
+                <div class="footer-center">
+                    <div class="footer-address">
+                        Москва, ул. Серпуховский Вал, д. 5
                     </div>
-                    <button id="open-consult" class="btn btn-secondary">Бесплатная консультация</button>
+                    <div class="footer-links">
+                        <a href="https://docs.google.com/document/d/1LJp8yAi8UsZoSZqvDlJ7CJR2Tb0TxjOUbWDVpsxSkZg/edit?tab=t.0" 
+                           target="_blank" 
+                           class="footer-link">
+                            Публичное предложение (оферта)
+                        </a>
+                        <a href="#" class="footer-link" id="privacy-link">
+                            Политика конфиденциальности
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Декларации для физических лиц 3НДФЛ. Все права защищены.</p>
-                <p><a href="/oplata.html" class="footer-link">Оплата</a> | <a href="#" class="footer-link">Политика конфиденциальности</a></p>
+                
+                <div class="footer-right">
+                    <div class="footer-contact-line">
+                        <a href="tel:+74993229237" class="footer-phone-link">
+                            <i class="fas fa-phone"></i> +7 (499) 322 92 37
+                        </a>
+                        <span class="footer-time">ежедневно 9:00-21:00 по Москве и МО</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="/script.js"></script>
+    <!-- Модальное окно для политики конфиденциальности -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Политика конфиденциальности</h3>
+            <div class="modal-text">
+                <p>Соблюдение Вашей конфиденциальности важно для нас. По этой причине, мы разработали Политику Конфиденциальности, которая описывает, как мы используем и храним Вашу информацию. Пожалуйста, ознакомьтесь с нашими правилами соблюдения конфиденциальности и сообщите нам, если у вас возникнут какие-либо вопросы.</p>
+                
+                <p><strong>Сбор и использование персональной информации</strong></p>
+                
+                <p>Под персональной информацией понимаются данные, которые могут быть использованы для идентификации определенного лица либо связи с ним.</p>
+                
+                <p>От вас может быть запрошено предоставление вашей персональной информации в любой момент, когда вы связываетесь с нами.</p>
+                
+                <p>Ниже приведены некоторые примеры типов персональной информации, которую мы можем собирать, и как мы можем использовать такую информацию.</p>
+                
+                <p>Какую персональную информацию мы собираем:</p>
+                <ul>
+                    <li>Когда вы оставляете заявку на сайте, мы можем собирать различную информацию, включая ваши имя, номер телефона, адрес электронной почты и т.д.</li>
+                </ul>
+                
+                <p>Как мы используем вашу персональную информацию:</p>
+                <ul>
+                    <li>Собираемая нами персональная информация позволяет нам связываться с вами и сообщать об уникальных предложениях, акциях и других мероприятиях и ближайших событиях.</li>
+                    <li>Время от времени, мы можем использовать вашу персональную информацию для отправки важных уведомлений и сообщений.</li>
+                    <li>Мы также можем использовать персональную информацию для внутренних целей, таких как проведения аудита, анализа данных и различных исследований в целях улучшения услуг предоставляемых нами и предоставления Вам рекомендаций относительно наших услуг.</li>
+                    <li>Если вы принимаете участие в розыгрыше призов, конкурсе или сходном стимулирующем мероприятии, мы можем использовать предоставляемую вами информацию для управления такими программами.</li>
+                </ul>
+                
+                <p><strong>Раскрытие информации третьим лицам</strong></p>
+                
+                <p>Мы не раскрываем полученную от Вас информацию третьим лицам.</p>
+                
+                <p>Исключения:</p>
+                <ul>
+                    <li>В случае если необходимо — в соответствии с законом, судебным порядком, в судебном разбирательстве, и/или на основании публичных запросов или запросов от государственных органов на территории РФ — раскрыть вашу персональную информацию. Мы также можем раскрывать информацию о вас если мы определим, что такое раскрытие необходимо или уместно в целях безопасности, поддержания правопорядка, или иных общественно важных случаях.</li>
+                    <li>В случае реорганизации, слияния или продажи мы можем передать собираемую нами персональную информацию соответствующему третьему лицу – правопреемнику.</li>
+                </ul>
+                
+                <p><strong>Защита персональной информации</strong></p>
+                
+                <p>Мы предпринимаем меры предосторожности — включая административные, технические и физические — для защиты вашей персональной информации от утраты, кражи, и недобросовестного использования, а также от несанкционированного доступа, раскрытия, изменения и уничтожения.</p>
+                
+                <p><strong>Соблюдение вашей конфиденциальности на уровне компании</strong></p>
+                
+                <p>Для того чтобы убедиться, что ваша персональная информация находится в безопасности, мы доводим нормы соблюдения конфиденциальности и безопасности до наших сотрудников, и строго следим за исполнением мер соблюдения конфиденциальности.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
