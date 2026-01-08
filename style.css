@@ -224,7 +224,7 @@ section {
 
 .hero-cta {
     padding: 20px 0;
-    max-width: 800px;
+    max-width: 1200px; /* УВЕЛИЧИЛ с 800px до 1200px */
     margin: 0 auto;
 }
 
@@ -236,12 +236,12 @@ section {
 }
 
 .cta-text-line {
-    font-size: 1.1rem; /* Слегка увеличим размер для лучшей читаемости */
+    font-size: 0.95rem; /* УМЕНЬШИЛ с 1.1rem до 0.95rem */
     font-weight: 400;
     white-space: nowrap; /* Одна строка без переносов */
     overflow: hidden;
     text-overflow: ellipsis; /* Добавим многоточие если текст не поместится */
-    max-width: 800px; /* Увеличим максимальную ширину */
+    max-width: 1100px; /* УВЕЛИЧИЛ с 800px до 1100px */
     text-align: center;
     margin: 0 auto;
 }
@@ -752,9 +752,24 @@ section {
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .hero-cta {
+        max-width: 1000px;
+    }
+    
+    .cta-text-line {
+        max-width: 900px;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 2.5rem;
+    }
+    
+    .hero-cta {
+        max-width: 800px;
     }
     
     .founder-content {
@@ -809,6 +824,7 @@ section {
     
     .hero-cta {
         padding: 20px 0;
+        max-width: 600px;
     }
     
     .cta-text {
@@ -818,7 +834,7 @@ section {
     }
     
     .cta-text-line {
-        font-size: 1rem;
+        font-size: 0.9rem; /* Ещё немного уменьшим на мобильных */
         white-space: normal; /* Разрешаем перенос на мобильных */
         max-width: 100%;
     }
@@ -917,6 +933,6 @@ section {
     }
     
     .cta-text-line {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 }
