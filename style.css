@@ -232,29 +232,18 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     margin-bottom: 25px;
 }
 
-.hand-drawn-arrow {
-    font-size: 3rem;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hand-drawn-arrow i {
-    font-size: 3.5rem;
-}
-
 .cta-text-line {
-    font-size: 1rem; /* Меньше, чем было */
-    font-weight: 400; /* Не жирный */
-    white-space: nowrap;
+    font-size: 1.1rem; /* Слегка увеличим размер для лучшей читаемости */
+    font-weight: 400;
+    white-space: nowrap; /* Одна строка без переносов */
     overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 600px;
+    text-overflow: ellipsis; /* Добавим многоточие если текст не поместится */
+    max-width: 800px; /* Увеличим максимальную ширину */
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* ===== УСЛУГИ ===== */
@@ -800,8 +789,8 @@ section {
     }
     
     .cta-text-line {
-        white-space: normal;
-        font-size: 0.95rem;
+        max-width: 700px;
+        white-space: normal; /* Разрешаем перенос на планшетах */
     }
 }
 
@@ -828,17 +817,9 @@ section {
         gap: 10px;
     }
     
-    .hand-drawn-arrow {
-        margin-bottom: 10px;
-    }
-    
-    .hand-drawn-arrow i {
-        font-size: 3rem;
-    }
-    
     .cta-text-line {
-        font-size: 0.95rem;
-        white-space: normal;
+        font-size: 1rem;
+        white-space: normal; /* Разрешаем перенос на мобильных */
         max-width: 100%;
     }
     
@@ -935,7 +916,7 @@ section {
         text-align: center;
     }
     
-    .hand-drawn-arrow i {
-        font-size: 2.5rem;
+    .cta-text-line {
+        font-size: 0.95rem;
     }
 }
