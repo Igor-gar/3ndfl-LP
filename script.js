@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== АНИМАЦИЯ ПРИ ПРОКРУТКЕ =====
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .advantage-item, .step-item');
+        const elements = document.querySelectorAll('.service-card, .advantage-item, .step-item, .review-card');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Инициализация анимации
-    const animatedElements = document.querySelectorAll('.service-card, .advantage-item, .step-item');
+    const animatedElements = document.querySelectorAll('.service-card, .advantage-item, .step-item, .review-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
