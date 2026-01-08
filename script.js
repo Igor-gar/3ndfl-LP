@@ -188,13 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const firstCard = servicesSection.querySelector('.service-card');
                     
                     if (firstCard) {
-                        // Прокручиваем так, чтобы первая карточка была видна вместе с кнопкой
-                        // Увеличиваем смещение, чтобы кнопка была точно видна
+                        // Увеличиваем смещение с 150 до 180 для 13" экранов
                         const cardHeight = firstCard.offsetHeight;
                         const windowHeight = window.innerHeight;
                         
-                        // Увеличиваем отступ с 100 до 150, чтобы кнопка была лучше видна
-                        const scrollPosition = servicesPosition + cardHeight - windowHeight + 150;
+                        // Увеличиваем отступ для лучшей видимости кнопок
+                        const scrollPosition = servicesPosition + cardHeight - windowHeight + 180;
                         
                         window.scrollTo({
                             top: scrollPosition,
