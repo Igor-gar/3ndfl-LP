@@ -606,11 +606,13 @@ section {
     margin-bottom: 15px;
 }
 
-/* ===== ОБНОВЛЕННЫЙ ПОДВАЛ ===== */
+/* ===== ОБНОВЛЕННЫЙ ПОДВАЛ НА СВЕТЛОМ ФОНЕ ===== */
 .footer {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: white; /* Светлый фон как у шапки */
+    color: #333; /* Темный цвет текста */
     padding: 40px 0 20px;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1); /* Тень сверху */
+    border-top: 1px solid #eee;
 }
 
 .footer-content {
@@ -640,7 +642,7 @@ section {
 }
 
 .footer-address {
-    color: #bbb;
+    color: #555; /* Темный серый цвет */
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -652,14 +654,14 @@ section {
 }
 
 .footer-link {
-    color: #bbb;
+    color: var(--primary-color); /* Основной цвет */
     text-decoration: none;
     transition: var(--transition);
     font-size: 0.95rem;
 }
 
 .footer-link:hover {
-    color: white;
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
@@ -671,7 +673,7 @@ section {
 }
 
 .footer-phone-link {
-    color: white;
+    color: var(--primary-color); /* Темный цвет */
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
@@ -683,16 +685,16 @@ section {
 }
 
 .footer-time {
-    color: #bbb;
+    color: #555; /* Темный серый цвет */
     font-size: 0.9rem;
     text-align: right;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #eee;
     padding-top: 20px;
     text-align: center;
-    color: #aaa;
+    color: #777;
     font-size: 0.85rem;
 }
 
