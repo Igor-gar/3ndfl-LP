@@ -206,5 +206,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // ===== МОДАЛЬНОЕ ОКНО ДЛЯ ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ =====
+    const privacyModal = document.getElementById('privacy-modal');
+    const privacyLink = document.getElementById('privacy-link');
+    const closePrivacyModal = document.querySelector('#privacy-modal .close-modal');
+
+    if (privacyLink) {
+        privacyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            privacyModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closePrivacyModal) {
+        closePrivacyModal.addEventListener('click', function() {
+            privacyModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    if (privacyModal) {
+        privacyModal.addEventListener('click', function(e) {
+            if (e.target === privacyModal) {
+                privacyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
     console.log('Сайт 3НДФЛ успешно загружен!');
 });
