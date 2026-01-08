@@ -477,15 +477,28 @@ section {
 
 .founder-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr; /* Изменено с 1fr 2fr на 1fr 1fr для равных колонок */
     gap: 50px;
-    align-items: center;
+    align-items: stretch; /* Растягиваем элементы по высоте */
+}
+
+.founder-image {
+    display: flex;
+    align-items: stretch; /* Растягиваем изображение */
 }
 
 .founder-image img {
     width: 100%;
+    height: 100%; /* Занимает всю высоту родителя */
+    object-fit: cover; /* Сохраняет пропорции, заполняя весь блок */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+}
+
+.founder-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Выравниваем текст по центру вертикально */
 }
 
 .founder-info .section-title {
@@ -883,6 +896,17 @@ section {
     
     .founder-content {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .founder-image {
+        max-height: 500px; /* Ограничиваем высоту фото на планшетах */
+    }
+    
+    .founder-image img {
+        height: auto;
+        max-height: 500px;
+        object-fit: contain; /* Показываем фото полностью */
     }
     
     .form-row {
@@ -1024,6 +1048,14 @@ section {
     .reviews-grid {
         grid-template-columns: 1fr;
     }
+    
+    .founder-image {
+        max-height: 400px; /* Уменьшаем фото на мобильных */
+    }
+    
+    .founder-image img {
+        max-height: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1072,5 +1104,13 @@ section {
     
     .cta-text-line {
         font-size: 0.85rem;
+    }
+    
+    .founder-image {
+        max-height: 350px; /* Еще уменьшаем фото на маленьких экранах */
+    }
+    
+    .founder-image img {
+        max-height: 350px;
     }
 }
