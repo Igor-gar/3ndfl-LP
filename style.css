@@ -4,6 +4,8 @@
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
     --success-color: #27ae60;
+    --green-color: #27ae60; /* Зеленый цвет для кнопок */
+    --red-color: #e74c3c; /* Красный цвет для старых цен */
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
     --gray-color: #95a5a6;
@@ -63,12 +65,17 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--secondary-color);
+    background-color: var(--green-color); /* Зеленый вместо синего */
     color: white;
 }
 
 .btn-secondary {
-    background-color: var(--accent-color);
+    background-color: var(--green-color); /* Зеленый вместо красного */
+    color: white;
+}
+
+.btn-green {
+    background-color: var(--green-color);
     color: white;
 }
 
@@ -152,7 +159,8 @@ section {
     width: 100%;
 }
 
-.phone-link {
+/* Простая ссылка телефона без кнопки */
+.simple-phone-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -160,27 +168,21 @@ section {
     font-weight: 600;
     color: var(--primary-color);
     text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid var(--secondary-color);
-    border-radius: var(--border-radius);
     transition: var(--transition);
     white-space: nowrap;
 }
 
-.phone-link i {
-    color: var(--secondary-color);
+.simple-phone-link i {
+    color: var(--green-color); /* Зеленая иконка телефона */
     font-size: 1.1rem;
 }
 
-.phone-link:hover {
-    background-color: var(--secondary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+.simple-phone-link:hover {
+    color: var(--green-color);
 }
 
-.phone-link:hover i {
-    color: white;
+.simple-phone-link:hover i {
+    color: var(--green-color);
 }
 
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
@@ -214,11 +216,28 @@ section {
     opacity: 0.9;
 }
 
-.hero-buttons {
+.hero-cta {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 5px solid var(--green-color);
+}
+
+.cta-text {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cta-text i {
+    color: var(--green-color);
+    font-size: 2rem;
 }
 
 /* ===== УСЛУГИ ===== */
@@ -239,7 +258,7 @@ section {
     padding: 30px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border-top: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--green-color); /* Зеленая рамка сверху */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -252,7 +271,7 @@ section {
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--green-color); /* Зеленые иконки */
     margin-bottom: 20px;
 }
 
@@ -286,19 +305,19 @@ section {
 
 .old-price {
     text-decoration: line-through;
-    color: var(--gray-color);
+    color: var(--red-color); /* Красный цвет для старых цен */
     font-size: 1.1rem;
     margin-right: 15px;
 }
 
 .new-price {
-    color: var(--accent-color);
+    color: var(--green-color); /* Зеленый цвет для новых цен */
     font-size: 1.4rem;
     font-weight: 700;
 }
 
 .btn-service {
-    background-color: var(--success-color);
+    background-color: var(--green-color); /* Зеленая кнопка */
     color: white;
     border: none;
     padding: 12px 25px;
@@ -311,7 +330,7 @@ section {
 }
 
 .btn-service:hover {
-    background-color: #219653;
+    background-color: #219653; /* Темнее при наведении */
 }
 
 /* ===== ПРЕИМУЩЕСТВА ===== */
@@ -332,7 +351,7 @@ section {
 
 .benefit-icon {
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--green-color); /* Зеленые иконки */
     margin-bottom: 20px;
 }
 
@@ -367,7 +386,7 @@ section {
 
 .advantage-icon {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--green-color); /* Зеленые иконки */
     margin-bottom: 20px;
 }
 
@@ -410,7 +429,7 @@ section {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background-color: var(--secondary-color);
+    background-color: var(--green-color); /* Зеленый номер шага */
     color: white;
     border-radius: 50%;
     display: flex;
@@ -418,7 +437,7 @@ section {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); /* Зеленая тень */
 }
 
 .step-item h3 {
@@ -437,7 +456,7 @@ section {
     border-radius: 8px;
     font-size: 0.95rem;
     color: #2c3e50;
-    border-left: 4px solid var(--secondary-color);
+    border-left: 4px solid var(--green-color); /* Зеленая полоса */
 }
 
 /* ===== ОСНОВАТЕЛЬ ===== */
@@ -465,7 +484,7 @@ section {
 
 .founder-name {
     font-size: 1.3rem;
-    color: var(--secondary-color);
+    color: var(--green-color); /* Зеленый цвет имени */
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -521,8 +540,8 @@ section {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    border-color: var(--green-color); /* Зеленая рамка при фокусе */
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2); /* Зеленая тень */
 }
 
 .form-agreement {
@@ -546,7 +565,7 @@ section {
 
 .form-success i {
     font-size: 4rem;
-    color: var(--success-color);
+    color: var(--green-color); /* Зеленая иконка успеха */
     margin-bottom: 20px;
 }
 
@@ -589,7 +608,7 @@ section {
 }
 
 .close-modal:hover {
-    color: var(--accent-color);
+    color: var(--red-color);
 }
 
 .modal-content h3 {
@@ -661,7 +680,7 @@ section {
 }
 
 .footer-link:hover {
-    color: var(--secondary-color);
+    color: var(--green-color); /* Зеленый при наведении */
     text-decoration: underline;
 }
 
@@ -672,22 +691,32 @@ section {
     gap: 10px;
 }
 
+.footer-contact-line {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    white-space: nowrap;
+}
+
 .footer-phone-link {
     color: var(--primary-color); /* Темный цвет */
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .footer-phone-link:hover {
-    color: var(--secondary-color);
+    color: var(--green-color);
 }
 
 .footer-time {
     color: #555; /* Темный серый цвет */
     font-size: 0.9rem;
     text-align: right;
+    white-space: nowrap;
 }
 
 .footer-bottom {
@@ -727,6 +756,10 @@ section {
         align-items: center;
     }
     
+    .footer-contact-line {
+        align-items: center;
+    }
+    
     .footer-time {
         text-align: center;
     }
@@ -745,9 +778,15 @@ section {
         font-size: 1.2rem;
     }
     
-    .hero-buttons {
+    .hero-cta {
+        padding: 20px;
+    }
+    
+    .cta-text {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        gap: 10px;
+        font-size: 1rem;
     }
     
     .section-title {
@@ -780,9 +819,8 @@ section {
         gap: 15px;
     }
     
-    .phone-link {
+    .simple-phone-link {
         font-size: 1rem;
-        padding: 8px 16px;
     }
     
     .footer-content {
@@ -800,6 +838,10 @@ section {
     }
     
     .footer-right {
+        align-items: center;
+    }
+    
+    .footer-contact-line {
         align-items: center;
     }
 }
@@ -833,5 +875,10 @@ section {
     
     .footer-logo-image {
         height: 50px;
+    }
+    
+    .footer-contact-line {
+        align-items: center;
+        text-align: center;
     }
 }
