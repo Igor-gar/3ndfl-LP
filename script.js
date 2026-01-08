@@ -178,6 +178,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            if (href === '#services') {
+                e.preventDefault();
+                // Прокручиваем к секции услуг с небольшим отступом, чтобы кнопки были внизу экрана
+                const servicesSection = document.getElementById('services');
+                if (servicesSection) {
+                    // Вычисляем позицию для скролла так, чтобы кнопки были видны
+                    const servicesPosition = servicesSection.offsetTop;
+                    const firstCard = servicesSection.querySelector('.service-card');
+                    
+                    if (firstCard) {
+                        // Прокручиваем так, чтобы первая карточка была видна вместе с кнопкой
+                        const cardHeight = firstCard.offsetHeight;
+                        const windowHeight = window.innerHeight;
+                        const scrollPosition = servicesPosition + cardHeight - windowHeight + 100;
+                        
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        window.scrollTo({
+                            top: servicesPosition - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                return;
+            }
+            
             if (href !== '#') {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
