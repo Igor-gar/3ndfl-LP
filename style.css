@@ -676,6 +676,75 @@ section {
     background: var(--primary-color);
 }
 
+/* ===== ОТЗЫВЫ ===== */
+.reviews {
+    background-color: #f8f9fa;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.review-card {
+    background: white;
+    border: 1px solid #e0e0e0; /* рамка как на скриншоте */
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.review-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.review-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-text {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.review-text p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.review-author {
+    margin-top: 20px;
+}
+
+.review-name {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.review-city {
+    color: var(--gray-color);
+    font-size: 0.95rem;
+}
+
 /* ===== ОБНОВЛЕННЫЙ ПОДВАЛ НА СВЕТЛОМ ФОНЕ ===== */
 .footer {
     background-color: white;
@@ -847,6 +916,10 @@ section {
         max-width: 700px;
         white-space: normal; /* Разрешаем перенос на планшетах */
     }
+    
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -946,6 +1019,10 @@ section {
     
     .modal-text ul {
         margin-left: 15px;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 }
 
