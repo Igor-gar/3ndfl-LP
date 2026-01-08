@@ -60,6 +60,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Верхняя панель с акциями -->
+    <div class="top-promo">
+        <div class="container">
+            <div class="promo-line">
+                <span>СКИДКА - 200Р</span>
+                <span>БЕЗ ПРЕДОПЛАТЫ - 1000Р</span>
+                <span>ПОД КЛЮЧ - 5000Р</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основная шапка -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">3-НДФЛ</span>
+                        <span class="logo-sub">декларации по доходам физических лиц</span>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <a href="tel:+74993229237" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        +7 (499) 322 92 37
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- Главный баннер -->
     <section class="hero">
         <div class="container">
@@ -376,40 +407,56 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Декларации 3-НДФЛ</h3>
-                    <p>Профессиональное оформление налоговых деклараций и вычетов</p>
-                    <p class="footer-contact">
-                        <i class="fas fa-envelope"></i> info@3ndfl-nalog.ru<br>
-                        <i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <h4>Услуги</h4>
-                    <ul>
-                        <li><a href="#order-form">Продажа недвижимости</a></li>
-                        <li><a href="#order-form">Продажа имущества</a></li>
-                        <li><a href="#order-form">Покупка недвижимости</a></li>
-                        <li><a href="#order-form">Обучение</a></li>
-                        <li><a href="#order-form">Лечение</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Свяжитесь с нами</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                <div class="footer-logo">
+                    <div class="logo-text">
+                        <span class="logo-main">3-НДФЛ</span>
+                        <span class="logo-sub">декларации по доходам физических лиц</span>
                     </div>
-                    <button id="open-consult" class="btn btn-secondary">Бесплатная консультация</button>
+                    <div class="footer-address">
+                        Москва, ул. Серпуховский Вал, д. 5
+                    </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Декларации для физических лиц 3НДФЛ. Все права защищены.</p>
-                <p><a href="#" class="footer-link">Политика конфиденциальности</a></p>
+                
+                <div class="footer-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+74993229237">+7 (499) 322 92 37</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@otchet.tk">info@otchet.tk</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>ежедневно 9:00-21:00 по Москве и МО</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://docs.google.com/document/d/1LJp8yAi8UsZoSZqvDlJ7CJR2Tb0TxjOUbWDVpsxSkZg/edit?tab=t.0" 
+                       target="_blank" 
+                       class="footer-link">
+                        Публичное предложение (оферта)
+                    </a>
+                    <a href="#" class="footer-link" id="privacy-link">
+                        Политика конфиденциальности
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Модальное окно для политики конфиденциальности -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Политика конфиденциальности</h3>
+            <div class="modal-text">
+                <p>Текст политики конфиденциальности будет добавлен позже.</p>
+                <p>В данный момент вы можете ознакомиться с нашей офертой по ссылке в подвале сайта.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
