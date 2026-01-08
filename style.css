@@ -86,41 +86,13 @@ section {
     margin-right: 8px;
 }
 
-/* ===== ВЕРХНЯЯ ПРОМО ПАНЕЛЬ ===== */
-.top-promo {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 8px 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.promo-line {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.promo-line span {
-    padding: 0 10px;
-    position: relative;
-}
-
-.promo-line span:not(:last-child):after {
-    content: "•";
-    position: absolute;
-    right: -25px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
 /* ===== ОСНОВНАЯ ШАПКА ===== */
 .main-header {
     background-color: white;
     padding: 20px 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    /* Убрали position: sticky */
+    position: relative;
     z-index: 1000;
 }
 
@@ -135,23 +107,50 @@ section {
     align-items: center;
 }
 
-.logo-text {
+.logo-image {
+    height: 60px; /* Высота логотипа, можно изменить по вашему усмотрению */
+    width: auto;
+}
+
+.header-right {
     display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+    align-items: center;
+    gap: 30px;
 }
 
-.logo-main {
-    font-size: 1.8rem;
-    font-weight: 700;
+.header-promo {
+    display: flex;
+    gap: 20px;
+}
+
+.promo-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: var(--transition);
+    padding: 5px 0;
+    position: relative;
+}
+
+.promo-link:hover {
     color: var(--primary-color);
-    font-family: 'Roboto', sans-serif;
 }
 
-.logo-sub {
-    font-size: 0.9rem;
-    color: var(--gray-color);
-    max-width: 200px;
+.promo-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.promo-link:hover:after {
+    width: 100%;
 }
 
 .phone-link {
@@ -166,6 +165,7 @@ section {
     border: 2px solid var(--secondary-color);
     border-radius: var(--border-radius);
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .phone-link i {
@@ -751,22 +751,22 @@ section {
         padding: 60px 0;
     }
     
-    .promo-line {
-        gap: 20px;
-        font-size: 0.8rem;
-    }
-    
-    .promo-line span:not(:last-child):after {
-        right: -15px;
-    }
-    
     .header-content {
         flex-direction: column;
         gap: 15px;
     }
     
-    .logo-text {
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
         text-align: center;
+    }
+    
+    .header-promo {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
     
     .phone-link {
@@ -803,21 +803,16 @@ section {
         padding: 30px 20px;
     }
     
-    .promo-line {
+    .header-promo {
         flex-direction: column;
         gap: 5px;
-        text-align: center;
     }
     
-    .promo-line span:not(:last-child):after {
-        display: none;
+    .promo-link {
+        font-size: 0.85rem;
     }
     
-    .logo-main {
-        font-size: 1.5rem;
-    }
-    
-    .logo-sub {
-        font-size: 0.8rem;
+    .logo-image {
+        height: 50px;
     }
 }
