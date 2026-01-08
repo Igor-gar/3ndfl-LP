@@ -1,11 +1,12 @@
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 :root {
     --primary-color: #2c3e50;
-    --secondary-color: #3498db;
+    --secondary-color: #3498db; /* Синий цвет для иконок и обводок */
     --accent-color: #e74c3c;
     --success-color: #27ae60;
     --green-color: #27ae60; /* Зеленый цвет для кнопок */
     --red-color: #e74c3c; /* Красный цвет для старых цен */
+    --blue-color: #3498db; /* Синий цвет для текста и выделений */
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
     --gray-color: #95a5a6;
@@ -93,6 +94,10 @@ section {
     margin-right: 8px;
 }
 
+.blue-text {
+    color: var(--blue-color);
+}
+
 /* ===== ОСНОВНАЯ ШАПКА ===== */
 .main-header {
     background-color: white;
@@ -141,7 +146,7 @@ section {
 }
 
 .promo-link:hover {
-    color: var(--secondary-color);
+    color: var(--blue-color); /* Синий при наведении */
 }
 
 .promo-link:after {
@@ -151,7 +156,7 @@ section {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--secondary-color);
+    background-color: var(--blue-color); /* Синяя линия */
     transition: var(--transition);
 }
 
@@ -173,16 +178,17 @@ section {
 }
 
 .simple-phone-link i {
-    color: var(--green-color); /* Зеленая иконка телефона */
+    color: #333; /* Черная иконка телефона */
     font-size: 1.1rem;
+    transition: var(--transition);
 }
 
 .simple-phone-link:hover {
-    color: var(--green-color);
+    color: var(--blue-color); /* Синий при наведении */
 }
 
 .simple-phone-link:hover i {
-    color: var(--green-color);
+    color: var(--blue-color); /* Синяя иконка при наведении */
 }
 
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
@@ -217,12 +223,9 @@ section {
 }
 
 .hero-cta {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: var(--border-radius);
+    padding: 20px 0;
     max-width: 800px;
     margin: 0 auto;
-    border-left: 5px solid var(--green-color);
 }
 
 .cta-text {
@@ -231,13 +234,25 @@ section {
     justify-content: center;
     gap: 15px;
     margin-bottom: 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
 }
 
-.cta-text i {
-    color: var(--green-color);
-    font-size: 2rem;
+.hand-drawn-arrow {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 400;
+    transform: rotate(45deg);
+    margin-right: 5px;
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cta-text-line {
+    font-size: 1.1rem; /* Меньше, чем было */
+    font-weight: 600;
+    white-space: nowrap; /* В одну строку */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 600px;
 }
 
 /* ===== УСЛУГИ ===== */
@@ -258,7 +273,7 @@ section {
     padding: 30px;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border-top: 5px solid var(--green-color); /* Зеленая рамка сверху */
+    border-top: 5px solid var(--blue-color); /* Синяя рамка сверху */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -271,7 +286,7 @@ section {
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--green-color); /* Зеленые иконки */
+    color: var(--blue-color); /* Синие иконки */
     margin-bottom: 20px;
 }
 
@@ -351,7 +366,7 @@ section {
 
 .benefit-icon {
     font-size: 3rem;
-    color: var(--green-color); /* Зеленые иконки */
+    color: var(--blue-color); /* Синие иконки */
     margin-bottom: 20px;
 }
 
@@ -386,7 +401,7 @@ section {
 
 .advantage-icon {
     font-size: 2.5rem;
-    color: var(--green-color); /* Зеленые иконки */
+    color: var(--blue-color); /* Синие иконки */
     margin-bottom: 20px;
 }
 
@@ -429,7 +444,7 @@ section {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background-color: var(--green-color); /* Зеленый номер шага */
+    background-color: var(--blue-color); /* Синий номер шага */
     color: white;
     border-radius: 50%;
     display: flex;
@@ -437,7 +452,7 @@ section {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); /* Зеленая тень */
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); /* Синяя тень */
 }
 
 .step-item h3 {
@@ -456,7 +471,7 @@ section {
     border-radius: 8px;
     font-size: 0.95rem;
     color: #2c3e50;
-    border-left: 4px solid var(--green-color); /* Зеленая полоса */
+    border-left: 4px solid var(--blue-color); /* Синяя полоса */
 }
 
 /* ===== ОСНОВАТЕЛЬ ===== */
@@ -484,7 +499,7 @@ section {
 
 .founder-name {
     font-size: 1.3rem;
-    color: var(--green-color); /* Зеленый цвет имени */
+    color: var(--blue-color); /* Синий цвет имени */
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -540,8 +555,8 @@ section {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--green-color); /* Зеленая рамка при фокусе */
-    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2); /* Зеленая тень */
+    border-color: var(--blue-color); /* Синяя рамка при фокусе */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Синяя тень */
 }
 
 .form-agreement {
@@ -565,7 +580,7 @@ section {
 
 .form-success i {
     font-size: 4rem;
-    color: var(--green-color); /* Зеленая иконка успеха */
+    color: var(--blue-color); /* Синяя иконка успеха */
     margin-bottom: 20px;
 }
 
@@ -680,7 +695,7 @@ section {
 }
 
 .footer-link:hover {
-    color: var(--green-color); /* Зеленый при наведении */
+    color: var(--blue-color); /* Синий при наведении */
     text-decoration: underline;
 }
 
@@ -706,10 +721,23 @@ section {
     font-weight: 600;
     transition: var(--transition);
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-phone-link i {
+    color: #333; /* Черная иконка телефона */
+    font-size: 1rem;
+    transition: var(--transition);
 }
 
 .footer-phone-link:hover {
-    color: var(--green-color);
+    color: var(--blue-color); /* Синий при наведении */
+}
+
+.footer-phone-link:hover i {
+    color: var(--blue-color); /* Синяя иконка при наведении */
 }
 
 .footer-time {
@@ -763,6 +791,11 @@ section {
     .footer-time {
         text-align: center;
     }
+    
+    .cta-text-line {
+        white-space: normal; /* На мобильных разрешаем перенос */
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -779,14 +812,24 @@ section {
     }
     
     .hero-cta {
-        padding: 20px;
+        padding: 20px 0;
     }
     
     .cta-text {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+    
+    .hand-drawn-arrow {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .cta-text-line {
         font-size: 1rem;
+        white-space: normal;
+        max-width: 100%;
     }
     
     .section-title {
@@ -880,5 +923,9 @@ section {
     .footer-contact-line {
         align-items: center;
         text-align: center;
+    }
+    
+    .hand-drawn-arrow {
+        font-size: 2.5rem;
     }
 }
