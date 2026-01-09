@@ -7,7 +7,7 @@
     <!-- Главная страница -->
     <url>
         <loc>https://3ndfl-nalog.ru/</loc>
-        <lastmod>2026-01-08</lastmod>
+        <lastmod>2026-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Страница доходов (3-НДФЛ) -->
     <url>
         <loc>https://3ndfl-nalog.ru/3ndfl/</loc>
-        <lastmod>2026-01-08</lastmod>
+        <lastmod>2026-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- Страница вычетов -->
     <url>
         <loc>https://3ndfl-nalog.ru/vichet/</loc>
-        <lastmod>2026-01-08</lastmod>
+        <lastmod>2026-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
