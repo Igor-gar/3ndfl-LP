@@ -2,6 +2,22 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ===== ПРОКРУТКА НАВЕРХ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ =====
+    // Прокручиваем страницу наверх при загрузке и обновлении
+    window.scrollTo(0, 0);
+    
+    // Отключаем восстановление позиции прокрутки браузером
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    
+    // Дополнительная прокрутка наверх после полной загрузки страницы
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 100);
+    });
+    
     // ===== НАСТРОЙКА ФОРМ =====
     // Замените эти ID на ваши реальные ID с Formspree
     const FORMSPREE_ORDER_FORM_ID = 'YOUR_FORM_ID_HERE';
@@ -121,6 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Показываем сообщение об успехе
                         this.style.display = 'none';
                         document.getElementById('success-message').style.display = 'block';
+                        
+                        // Прокручиваем к сообщению об успехе
+                        document.getElementById('success-message').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
                     } else {
                         // Для модального окна
                         alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
@@ -265,6 +287,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // ===== ДОПОЛНИТЕЛЬНАЯ КНОПКА "НАВЕРХ" =====
+    // Создаем кнопку для быстрого возврата наверх
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    scrollToTopBtn.className = 'scroll-to-top';
+    scrollToTopBtn.title = 'Наверх';
+    document.body.appendChild(scrollToTopBtn);
+    
+    // Показываем/скрываем кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Обработчик клика по кнопке
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
     console.log('Сайт 3НДФЛ успешно загружен!');
 });
