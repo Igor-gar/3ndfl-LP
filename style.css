@@ -194,7 +194,7 @@ section {
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
 .hero {
     background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-                url('assets/images/header-bg.jpg') center/cover;
+                url('/assets/images/header-bg.jpg') center/cover; /* Изменен путь на абсолютный */
     color: white;
     text-align: center;
     padding: 120px 0;
