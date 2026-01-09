@@ -194,7 +194,7 @@ section {
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
 .hero {
     background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-                url('/assets/images/header-bg.jpg') center/cover; /* Изменен путь на абсолютный */
+                url('/assets/images/header-bg.jpg') center/cover;
     color: white;
     text-align: center;
     padding: 120px 0;
@@ -224,7 +224,7 @@ section {
 
 .hero-cta {
     padding: 20px 0;
-    max-width: 1200px; /* УВЕЛИЧИЛ с 800px до 1200px */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -236,12 +236,12 @@ section {
 }
 
 .cta-text-line {
-    font-size: 0.95rem; /* УМЕНЬШИЛ с 1.1rem до 0.95rem */
+    font-size: 0.95rem;
     font-weight: 400;
-    white-space: nowrap; /* Одна строка без переносов */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Добавим многоточие если текст не поместится */
-    max-width: 1100px; /* УВЕЛИЧИЛ с 800px до 1100px */
+    text-overflow: ellipsis;
+    max-width: 1100px;
     text-align: center;
     margin: 0 auto;
 }
@@ -341,7 +341,7 @@ section {
 }
 
 .btn-service:hover {
-    background-color: #5da010; /* Темнее при наведении */
+    background-color: #5da010;
 }
 
 /* ===== ПРЕИМУЩЕСТВА ===== */
@@ -495,7 +495,7 @@ section {
 
 .founder-name {
     font-size: 1.3rem;
-    color: var(--gray-color); /* Серый цвет как у подзаголовка формы */
+    color: var(--gray-color);
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -603,10 +603,10 @@ section {
     background-color: white;
     padding: 40px;
     border-radius: var(--border-radius);
-    max-width: 700px; /* Увеличим ширину для текста */
+    max-width: 700px;
     width: 90%;
     position: relative;
-    max-height: 90vh; /* Ограничим высоту */
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
 }
@@ -628,14 +628,14 @@ section {
 .modal-content h3 {
     margin-bottom: 25px;
     color: var(--primary-color);
-    padding-right: 30px; /* Чтобы не перекрывалось крестиком */
+    padding-right: 30px;
 }
 
 .modal-text {
     line-height: 1.6;
     margin-top: 20px;
-    overflow-y: auto; /* Добавляем прокрутку для длинного текста */
-    padding-right: 10px; /* Отступ для скроллбара */
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .modal-text p {
@@ -689,7 +689,7 @@ section {
 
 .review-card {
     background: white;
-    border: 1px solid #e0e0e0; /* рамка как на скриншоте */
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 30px;
     display: flex;
@@ -743,6 +743,42 @@ section {
 .review-city {
     color: var(--gray-color);
     font-size: 0.95rem;
+}
+
+/* ===== КНОПКА "НАВЕРХ" ===== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--green-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: #5da010;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== ОБНОВЛЕННЫЙ ПОДВАЛ НА СВЕТЛОМ ФОНЕ ===== */
@@ -914,7 +950,7 @@ section {
     
     .cta-text-line {
         max-width: 700px;
-        white-space: normal; /* Разрешаем перенос на планшетах */
+        white-space: normal;
     }
     
     .reviews-grid {
@@ -947,8 +983,8 @@ section {
     }
     
     .cta-text-line {
-        font-size: 0.9rem; /* Ещё немного уменьшим на мобильных */
-        white-space: normal; /* Разрешаем перенос на мобильных */
+        font-size: 0.9rem;
+        white-space: normal;
         max-width: 100%;
     }
     
