@@ -193,7 +193,7 @@ section {
 
 /* ===== ГЛАВНЫЙ БАННЕР ===== */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), /* Изменено с 0.9 на 0.7 для лучшей видимости фона */
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
                 url('/assets/images/header-bg.jpg') center/cover;
     color: white;
     text-align: center;
