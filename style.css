@@ -327,17 +327,6 @@ section {
     display: block;
 }
 
-.volume-discount {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 10px 0 15px 0;
-    padding: 8px 12px;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    border-left: 3px solid var(--green-color);
-    font-style: italic;
-}
-
 .btn-service {
     background-color: var(--green-color);
     color: white;
