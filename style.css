@@ -344,6 +344,31 @@ section {
     background-color: #5da010;
 }
 
+/* ===== СТИЛИ ДЛЯ ПРИМЕЧАНИЙ В КАРТОЧКАХ УСЛУГ ===== */
+.service-note {
+    background-color: #e8f4fc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--blue-color);
+    margin: 10px 0;
+    border-left: 3px solid var(--blue-color);
+}
+
+.service-note i {
+    margin-right: 5px;
+    font-size: 0.9rem;
+}
+
+.volume-discount {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin: 5px 0 15px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 /* ===== ПРЕИМУЩЕСТВА ===== */
 .benefits {
     background-color: #f8f9fa;
