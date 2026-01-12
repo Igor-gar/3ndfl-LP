@@ -294,18 +294,28 @@ section {
     flex-grow: 1;
 }
 
+/* Контейнер для нижней части карточки */
+.service-card-bottom {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: auto;
+}
+
 .service-docs {
     background-color: #f8f9fa;
     padding: 12px;
     border-radius: 6px;
     font-size: 0.95rem;
-    margin: 15px 0;
+    margin: 15px 0 20px 0;
+    flex-shrink: 0;
 }
 
 .service-price {
-    margin: 10px 0 5px 0;
+    margin: 5px 0;
     padding: 10px 0 5px 0;
     border-top: 1px dashed #ddd;
+    flex-shrink: 0;
 }
 
 .old-price {
@@ -318,6 +328,7 @@ section {
 
 .new-price-line {
     margin-bottom: 15px;
+    flex-shrink: 0;
 }
 
 .new-price {
@@ -328,15 +339,29 @@ section {
 }
 
 .volume-discount {
-    font-size: 0.85rem; /* Уменьшен шрифт с 0.9rem */
+    font-size: 0.8rem; /* Уменьшен шрифт с 0.85rem до 0.8rem */
     color: #666;
-    margin: 10px 0 15px 0;
+    margin: 5px 0 15px 0;
     padding: 8px 12px;
     background-color: #f8f9fa;
     border-radius: 6px;
     border-left: 3px solid var(--green-color);
     font-style: italic;
     line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.additional-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 5px 0 15px 0;
+    padding: 8px 12px;
+    background-color: #fff9e6;
+    border-radius: 6px;
+    border-left: 3px solid #ff9900;
+    font-style: italic;
+    line-height: 1.4;
+    flex-shrink: 0;
 }
 
 .btn-service {
@@ -350,6 +375,7 @@ section {
     transition: var(--transition);
     width: 100%;
     margin-top: auto;
+    flex-shrink: 0;
 }
 
 .btn-service:hover {
