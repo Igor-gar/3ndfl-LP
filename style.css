@@ -131,14 +131,15 @@ section {
 
 .header-promo {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .promo-link {
     color: #333;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     white-space: nowrap;
     transition: var(--transition);
     padding: 5px 0;
@@ -162,6 +163,20 @@ section {
 
 .promo-link:hover:after {
     width: 100%;
+}
+
+/* Стиль для ссылки без скролла */
+.promo-link.no-scroll {
+    cursor: default;
+}
+
+.promo-link.no-scroll:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.promo-link.no-scroll:after {
+    display: none;
 }
 
 /* Простая ссылка телефона без кнопки */
@@ -363,7 +378,7 @@ section {
 .volume-discount {
     font-size: 0.8rem;
     color: #666;
-    text-align: center;
+    text-align: left;
     margin: 5px 0 15px;
     font-style: italic;
     opacity: 0.8;
