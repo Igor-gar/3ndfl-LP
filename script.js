@@ -107,43 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== ПРОКРУТКА К КОНКРЕТНЫМ КАРТОЧКАМ =====
-    // Обработка якорей для промо-ссылок
-    document.querySelectorAll('.header-promo a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Пропускаем ссылки без скролла
-            if (this.classList.contains('no-scroll')) {
-                e.preventDefault();
-                return;
-            }
-            
-            if (href === '#property-deduction' || href === '#social-deduction') {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    // Прокручиваем к карточке с отступом
-                    const cardTop = targetElement.offsetTop;
-                    window.scrollTo({
-                        top: cardTop - 100,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Добавляем подсветку карточки
-                    targetElement.style.boxShadow = '0 0 0 3px rgba(52, 152, 219, 0.5)';
-                    targetElement.style.transition = 'box-shadow 0.3s ease';
-                    
-                    // Убираем подсветку через 2 секунды
-                    setTimeout(() => {
-                        targetElement.style.boxShadow = 'var(--shadow)';
-                    }, 2000);
-                }
-                return;
-            }
-        });
-    });
-    
     // ===== ОТПРАВКА ФОРМ =====
     const forms = document.querySelectorAll('form');
     
