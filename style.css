@@ -328,7 +328,7 @@ section {
 }
 
 .volume-discount {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Уменьшен шрифт с 0.9rem */
     color: #666;
     margin: 10px 0 15px 0;
     padding: 8px 12px;
@@ -336,6 +336,7 @@ section {
     border-radius: 6px;
     border-left: 3px solid var(--green-color);
     font-style: italic;
+    line-height: 1.4;
 }
 
 .btn-service {
