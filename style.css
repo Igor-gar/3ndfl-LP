@@ -268,6 +268,7 @@ section {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 750px; /* Добавлена минимальная высота для выравнивания второго ряда */
 }
 
 .service-card:hover {
@@ -300,6 +301,8 @@ section {
     flex-direction: column;
     flex-grow: 1;
     margin-top: auto;
+    height: 310px; /* Фиксированная высота для выравнивания всех карточек */
+    justify-content: space-between;
 }
 
 .service-docs {
@@ -339,9 +342,9 @@ section {
 }
 
 .volume-discount {
-    font-size: 0.8rem; /* Уменьшен шрифт с 0.85rem до 0.8rem */
+    font-size: 0.75rem; /* Уменьшен шрифт с 0.8rem до 0.75rem */
     color: #666;
-    margin: 5px 0 15px 0;
+    margin: 5px 0 10px 0;
     padding: 8px 12px;
     background-color: #f8f9fa;
     border-radius: 6px;
@@ -354,7 +357,7 @@ section {
 .additional-info {
     font-size: 0.85rem;
     color: #666;
-    margin: 5px 0 15px 0;
+    margin: 5px 0 10px 0;
     padding: 8px 12px;
     background-color: #fff9e6;
     border-radius: 6px;
@@ -993,6 +996,14 @@ section {
     
     .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-card {
+        min-height: auto; /* Убираем фиксированную высоту на мобильных */
+    }
+    
+    .service-card-bottom {
+        height: auto; /* Убираем фиксированную высоту на мобильных */
     }
 }
 
